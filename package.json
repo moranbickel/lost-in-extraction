@@ -1,0 +1,21 @@
+{
+  "name": "paper-cuts",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Reproducible checks for facts lost or altered during PDF extraction.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/checks.test.js test/compare.test.js test/integration.test.js test/server.test.js test/contract.test.js test/rows.test.js test/workflow.test.js test/build_fixtures.test.js test/font.test.js",
+    "test:ui": "playwright test",
+    "check": "node bin/paper-cuts.js run",
+    "start": "node bin/paper-cuts.js serve",
+    "list": "node bin/paper-cuts.js list"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "signed-amounts",
+  "title": "Signs and decimal places",
+  "documentTitle": "Account adjustment",
+  "language": "English",
+  "category": "Numbers",
+  "description": "A credit must keep its minus sign and its decimal places.",
+  "construction": "Ordinary left-to-right text with similar positive and negative amounts.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "Credit adjustment: -$1,250.50",
+        "x": 48,
+        "y": 188
+      },
+      {
+        "type": "text",
+        "text": "Original charge: $1,250.50",
+        "x": 48,
+        "y": 226
+      },
+      {
+        "type": "text",
+        "text": "Tax rate: 0.75%",
+        "x": 48,
+        "y": 294
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "credit",
+      "kind": "contains",
+      "label": "Negative credit",
+      "expected": "Credit adjustment: -$1,250.50",
+      "page": 1,
+      "region": [
+        42,
+        166,
+        430,
+        198
+      ]
+    },
+    {
+      "id": "rate",
+      "kind": "contains",
+      "label": "Fractional percentage",
+      "expected": "Tax rate: 0.75%",
+      "page": 1,
+      "region": [
+        42,
+        272,
+        320,
+        304
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

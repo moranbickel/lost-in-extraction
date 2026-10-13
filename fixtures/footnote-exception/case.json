@@ -1,0 +1,68 @@
+{
+  "id": "footnote-exception",
+  "title": "An exception in the footnote",
+  "documentTitle": "Service availability",
+  "language": "English",
+  "category": "Exceptions",
+  "description": "The qualification in the footnote must survive extraction.",
+  "construction": "A small, readable footnote qualifies the main sentence. Both passages and the * marker that links them are tested; whether a reader would associate them is not.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "Support is available every day.*",
+        "x": 48,
+        "y": 188
+      },
+      {
+        "type": "text",
+        "text": "Contact the service desk for assistance.",
+        "x": 48,
+        "y": 228
+      },
+      {
+        "type": "rule",
+        "x": 48,
+        "y": 677,
+        "x2": 547,
+        "y2": 677
+      },
+      {
+        "type": "text",
+        "text": "* Except public holidays in the service region.",
+        "x": 48,
+        "y": 706,
+        "size": 9
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "main",
+      "kind": "contains",
+      "label": "Main statement",
+      "expected": "Support is available every day.*",
+      "page": 1,
+      "region": [
+        42,
+        166,
+        470,
+        199
+      ]
+    },
+    {
+      "id": "exception",
+      "kind": "contains",
+      "label": "Footnote exception",
+      "expected": "* Except public holidays in the service region.",
+      "page": 1,
+      "region": [
+        42,
+        689,
+        485,
+        717
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

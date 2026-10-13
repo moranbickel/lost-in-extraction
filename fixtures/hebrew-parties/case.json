@@ -1,0 +1,82 @@
+{
+  "id": "hebrew-parties",
+  "title": "Hebrew party labels",
+  "documentTitle": "Delivery record",
+  "language": "Hebrew",
+  "category": "Labels",
+  "description": "The supplier and customer labels must remain readable in Hebrew.",
+  "construction": "Two independent RTL lines. Company names are invented.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "ספק: חברת ארז",
+        "x": 547,
+        "y": 192,
+        "direction": "rtl",
+        "align": "right",
+        "size": 17
+      },
+      {
+        "type": "text",
+        "text": "לקוח: חברת ברוש",
+        "x": 547,
+        "y": 239,
+        "direction": "rtl",
+        "align": "right",
+        "size": 17
+      },
+      {
+        "type": "text",
+        "text": "המשלוח טרם נמסר",
+        "x": 547,
+        "y": 303,
+        "direction": "rtl",
+        "align": "right",
+        "size": 17
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "supplier",
+      "kind": "contains",
+      "label": "Supplier label",
+      "expected": "ספק: חברת ארז",
+      "page": 1,
+      "region": [
+        48,
+        166,
+        553,
+        203
+      ]
+    },
+    {
+      "id": "customer",
+      "kind": "contains",
+      "label": "Customer label",
+      "expected": "לקוח: חברת ברוש",
+      "page": 1,
+      "region": [
+        48,
+        213,
+        553,
+        250
+      ]
+    },
+    {
+      "id": "delivery",
+      "kind": "contains",
+      "label": "Delivery status",
+      "expected": "המשלוח טרם נמסר",
+      "page": 1,
+      "region": [
+        48,
+        277,
+        553,
+        314
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

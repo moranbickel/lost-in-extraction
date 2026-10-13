@@ -1,0 +1,109 @@
+{
+  "id": "payment-rows",
+  "title": "Paid versus outstanding",
+  "documentTitle": "Payment summary",
+  "language": "English",
+  "category": "Tables",
+  "description": "The amounts must stay with the correct payment labels.",
+  "construction": "The labels are drawn first, then the values, while the rendered page has two rows.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "Description",
+        "x": 48,
+        "y": 178,
+        "font": "Helvetica-Bold"
+      },
+      {
+        "type": "text",
+        "text": "Amount",
+        "x": 412,
+        "y": 178,
+        "font": "Helvetica-Bold"
+      },
+      {
+        "type": "rule",
+        "x": 48,
+        "y": 193,
+        "x2": 547,
+        "y2": 193
+      },
+      {
+        "type": "text",
+        "text": "Amount paid",
+        "x": 48,
+        "y": 224
+      },
+      {
+        "type": "text",
+        "text": "Amount outstanding",
+        "x": 48,
+        "y": 266
+      },
+      {
+        "type": "text",
+        "text": "$10,000",
+        "x": 412,
+        "y": 224
+      },
+      {
+        "type": "text",
+        "text": "$0",
+        "x": 412,
+        "y": 266
+      },
+      {
+        "type": "rule",
+        "x": 48,
+        "y": 287,
+        "x2": 547,
+        "y2": 287
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "paid",
+      "kind": "row",
+      "label": "Paid amount stays in its row",
+      "anchor": "Amount paid",
+      "value": "$10,000",
+      "page": 1,
+      "region": [
+        42,
+        202,
+        548,
+        234
+      ]
+    },
+    {
+      "id": "outstanding",
+      "kind": "row",
+      "label": "Outstanding amount stays in its row",
+      "anchor": "Amount outstanding",
+      "value": "$0",
+      "page": 1,
+      "region": [
+        42,
+        244,
+        548,
+        276
+      ]
+    },
+    {
+      "id": "zero",
+      "kind": "contains",
+      "label": "Zero remains in the extracted text",
+      "expected": "$0",
+      "page": 1,
+      "region": [
+        402,
+        244,
+        548,
+        276
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

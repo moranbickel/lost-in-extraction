@@ -1,0 +1,14 @@
+{
+  "sha256": "bf3972fa9305e869f9d240f87f5e534387e03b4d75670f97c016ad703208a2b5",
+  "pages": 1,
+  "width": 595.28,
+  "height": 841.89,
+  "previews": [
+    "page-1.png"
+  ],
+  "generator": "reportlab",
+  "renderer": "pypdfium2",
+  "previewSha256": {
+    "page-1.png": "4c3d1ba5ff4f58464a27564365a129f1d48104dd947144d213984b855470a6de"
+  }
+}

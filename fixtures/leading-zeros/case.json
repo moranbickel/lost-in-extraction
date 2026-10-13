@@ -1,0 +1,60 @@
+{
+  "id": "leading-zeros",
+  "title": "Leading zeros",
+  "documentTitle": "Invoice record",
+  "language": "English",
+  "category": "Identifiers",
+  "description": "A numeric identifier must retain all six digits.",
+  "construction": "Ordinary left-to-right text. This is a simple control case.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "Invoice ID: 000127",
+        "x": 48,
+        "y": 188
+      },
+      {
+        "type": "text",
+        "text": "Account: 004208",
+        "x": 48,
+        "y": 226
+      },
+      {
+        "type": "text",
+        "text": "Payment reference: INV-000127",
+        "x": 48,
+        "y": 294
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "invoice",
+      "kind": "contains",
+      "label": "Six-digit invoice ID",
+      "expected": "Invoice ID: 000127",
+      "page": 1,
+      "region": [
+        42,
+        166,
+        310,
+        198
+      ]
+    },
+    {
+      "id": "account",
+      "kind": "contains",
+      "label": "Six-digit account",
+      "expected": "Account: 004208",
+      "page": 1,
+      "region": [
+        42,
+        204,
+        310,
+        236
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

@@ -1,0 +1,67 @@
+{
+  "id": "split-negation",
+  "title": "A negation split across draws",
+  "documentTitle": "Dispatch instruction",
+  "language": "English",
+  "category": "Negation",
+  "description": "A separately drawn 'not' must remain inside the instruction.",
+  "construction": "The sentence is rendered on one line using three distinct text operations.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "The goods must",
+        "x": 48,
+        "y": 188
+      },
+      {
+        "type": "text",
+        "text": "not",
+        "x": 147,
+        "y": 188,
+        "font": "Helvetica-Bold"
+      },
+      {
+        "type": "text",
+        "text": "be shipped before payment.",
+        "x": 171,
+        "y": 188
+      },
+      {
+        "type": "text",
+        "text": "This instruction applies to order 002184.",
+        "x": 48,
+        "y": 242
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "instruction",
+      "kind": "contains",
+      "label": "Negation remains in the sentence",
+      "expected": "The goods must not be shipped before payment.",
+      "page": 1,
+      "region": [
+        42,
+        166,
+        450,
+        199
+      ]
+    },
+    {
+      "id": "order",
+      "kind": "contains",
+      "label": "Order identifier",
+      "expected": "order 002184",
+      "page": 1,
+      "region": [
+        42,
+        220,
+        450,
+        253
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

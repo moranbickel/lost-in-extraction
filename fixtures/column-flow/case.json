@@ -1,0 +1,80 @@
+{
+  "id": "column-flow",
+  "title": "Two-column reading order",
+  "documentTitle": "Delivery terms",
+  "language": "English",
+  "category": "Reading order",
+  "description": "Each column forms a separate sentence. Reading across the columns changes the text.",
+  "construction": "The left column is drawn as a block, then the right. No explicit reading-order tags.",
+  "document": [
+    [
+      {
+        "type": "text",
+        "text": "Cancellation",
+        "x": 48,
+        "y": 176,
+        "font": "Helvetica-Bold"
+      },
+      {
+        "type": "text",
+        "text": "Payment",
+        "x": 340,
+        "y": 176,
+        "font": "Helvetica-Bold"
+      },
+      {
+        "type": "text",
+        "text": "The buyer may cancel",
+        "x": 48,
+        "y": 212
+      },
+      {
+        "type": "text",
+        "text": "only before dispatch.",
+        "x": 48,
+        "y": 240
+      },
+      {
+        "type": "text",
+        "text": "The deposit is refundable",
+        "x": 340,
+        "y": 212
+      },
+      {
+        "type": "text",
+        "text": "within fourteen days.",
+        "x": 340,
+        "y": 240
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "id": "cancel",
+      "kind": "contains",
+      "label": "Cancellation condition remains attached",
+      "expected": "The buyer may cancel only before dispatch.",
+      "page": 1,
+      "region": [
+        42,
+        191,
+        310,
+        250
+      ]
+    },
+    {
+      "id": "deposit",
+      "kind": "contains",
+      "label": "Refund period remains attached",
+      "expected": "The deposit is refundable within fourteen days.",
+      "page": 1,
+      "region": [
+        334,
+        191,
+        551,
+        250
+      ]
+    }
+  ],
+  "schemaVersion": 1
+}

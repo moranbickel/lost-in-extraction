@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Paper Cuts | Extraction report</title>
+  <style>/* PAPER_CUTS_STYLE */</style>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="#">Paper Cuts<span class="version">0.1</span></a>
+    <button id="download-report" class="text-button">Download JSON</button>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">PDF EXTRACTION / RECORDED RUN</p><h1 id="page-title">What survived extraction?</h1>
+      <p class="deck">Compare each source document with the text returned by the parser.</p></div>
+      <p id="run-info" class="run-info"></p>
+    </section>
+    <section class="summary" aria-label="Filter documents by check result" id="summary"></section>
+    <div class="workspace">
+      <aside class="sidebar" aria-label="Documents">
+        <div class="sidebar-heading"><h2>Documents</h2><span id="document-count" class="mono"></span></div>
+        <label class="sr-only" for="search">Find a document</label>
+        <input id="search" type="search" placeholder="Find a document…" autocomplete="off">
+        <label class="sr-only" for="language">Document language</label>
+        <select id="language"><option value="all">All languages</option><option>English</option><option>Hebrew</option></select>
+        <nav id="case-list" aria-label="Select a document"></nav>
+      </aside>
+      <section class="document" id="document" aria-labelledby="document-title">
+        <div class="document-heading"><div><p id="case-meta" class="eyebrow"></p><h2 id="document-title"></h2><p id="description"></p></div>
+        <a id="download-pdf" class="download-link">Source PDF <span aria-hidden="true">↓</span></a></div>
+        <div id="parser-buttons" class="parser-buttons" aria-label="Select parser"></div>
+        <div class="comparison">
+          <section class="pane source-pane" aria-labelledby="source-heading">
+            <div class="pane-heading"><h3 id="source-heading">Source document</h3><button class="text-button" id="expand-source">Enlarge</button></div>
+            <div class="paper-wrap"><div class="paper" id="paper"><img id="source-image" alt=""><div id="source-region" aria-hidden="true"></div></div></div>
+            <p class="pane-caption" id="source-caption"></p>
+          </section>
+          <section class="pane extraction-pane" aria-labelledby="extraction-heading">
+            <div class="pane-heading"><h3 id="extraction-heading">Extracted text</h3><span id="parser-version" class="mono"></span></div>
+            <pre id="extraction" tabindex="0" dir="auto"></pre>
+            <p class="pane-caption">Raw page text. No spelling, number, or direction corrections applied by Paper Cuts.</p>
+          </section>
+        </div>
+        <section class="checks-section" aria-labelledby="checks-heading">
+          <div class="section-heading"><h3 id="checks-heading">Checks</h3><p>Select a check to locate it on the source.</p></div>
+          <div class="checks-layout"><div id="checks" role="list"></div><div id="check-detail" class="check-detail" aria-live="polite"></div></div>
+        </section>
+        <details class="method"><summary>Construction and run details</summary><div id="method-content"></div></details>
+      </section>
+      <p id="empty" hidden>No documents match these filters.</p>
+    </div>
+    <footer>
+      <p>These synthetic cases test specific text and row assertions. They do not measure overall parser accuracy.</p>
+      <p>Passed = assertion satisfied. Failed = assertion not satisfied. Unsupported = adapter lacks the required data. Error = check could not run.</p>
+    </footer>
+  </main>
+  <dialog id="source-dialog"><div class="dialog-heading"><span id="dialog-title"></span><button id="close-dialog" class="text-button">Close</button></div><img id="large-source" alt=""></dialog>
+  <script type="application/json" id="report-data">"PAPER_CUTS_DATA"</script>
+  <script>/* PAPER_CUTS_APP */</script>
+</body>
+</html>
